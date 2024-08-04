@@ -1,45 +1,37 @@
-# WellnessWizard-Your-Health-Fitness-Productivity-Guru
-
-This chatbot represents an advancement in the field of prompt engineering by querying and analysis. It leverages Langchain's language model to generate intelligent and contextually relevant prompts. It enables the users to efficiently interact with diverse data from 3 categories.
- Health
- Productivity
- Fitness
-Paving the way for improved decision-making and seamless data exploration. It harnesses the potential of Lang chain's cutting-edge language models and presents through an intuitive Streamlit user interface. The chat bot will recommend and answer queries by providing information about apps, addressing queries, and recommending relevant apps based on user input.
-Overall the goal is to target health enthusiasts or someone keen on productivity and empower users with diverse backgrounds to effortlessly gain insights and achieve their health and fitness aspirations.
+# FlexBot- Advanced Chatbot-Your-Health-Fitness-Productivity-Guru
+## Overview
+This chatbot represents a significant advancement in prompt engineering by facilitating queries and analysis. It utilizes Langchain's language model to generate intelligent and contextually relevant prompts, enabling users to efficiently interact with data across three categories: Health, Productivity, and Fitness. The chatbot aims to enhance decision-making and streamline data exploration by leveraging Langchain's cutting-edge language models and presenting information through an intuitive Streamlit user interface. It provides recommendations and answers queries about apps, addressing user needs and suggesting relevant applications based on input. The goal is to target health enthusiasts and productivity seekers, empowering users from diverse backgrounds to gain insights and achieve their health and fitness goals.
 
 
-**Data Source** 
-1. Web Scraping
-For each category, app information is scraped using the app function from the google play scraper library. The information includes details such as title, score, ratings, whether it contains ads, price, whether it's free, real installs, release date, in-app product price, and the app icon.
-Dataframes are created for each category using the information collected. These data frames contain selected columns of app information.
+## Data Source
+#### Web Scraping
+App information for each category is scraped using the app function from the Google Play Scraper library. This data includes app details such as title, score, ratings, ads presence, price, whether it's free, real installs, release date, in-app product price, and the app icon. Dataframes are created for each category with selected columns, enabling comprehensive analysis and insights into app performance and user feedback.
 
-The script efficiently gathers comprehensive data on mobile applications, facilitating subsequent analysis and insights into app performance and user feedback in the specified categories.
+## Data Collection
+#### Amazon S3
 
-**Data Collection**
-1. Amazon S3:
+Data is stored in Amazon S3, utilizing the boto3 library for authentication through AWS access key ID and secret access key. This setup is ideal for archiving, data backup, and facilitating collaborative data analysis workflows.
 
-The function creates an S3 client using the boto3 library, specifying AWS access key ID and secret access key for authentication. The access key ID and secret access key provided are usually kept secure. This can be particularly useful for archiving, data backup, or facilitating collaborative data analysis workflows.
+## Model Development
 
-**Model Development**
+**1. Framework - Langchain:**
+ Langchain serves as the main framework, providing structure and tools to integrate various components such as language models, data processing agents, and user interfaces. It streamlines the development workflow, making it easier to handle natural language processing tasks.
 
-1. Framework - Langchain:
- Langchain serves as the overarching framework for the chatbot development process. It provides the structure and tools necessary to seamlessly integrate various components of the chatbot, including language models, data processing agents, and user interfaces. Langchain likely offers a set of functionalities that streamline the development workflow, making it easier for developers to work with natural language processing tasks.
+**2. Chat Model Used - ChatOpenAI:**
+ ChatOpenAI is responsible for generating responses to user inputs. Using advanced natural language processing, it interprets queries and produces relevant and coherent responses, offering a more engaging and interactive experience.
 
-2. Chat Model Used - ChatOpenAI:
- The chat model, ChatOpenAI, is a crucial component responsible for generating responses to user inputs. Leveraging advanced natural language processing techniques, ChatOpenAI interprets user queries and produces contextually relevant and coherent responses. It is trained on large datasets to understand and mimic human-like conversation, ensuring a more engaging and interactive user experience.
+**3. Agent Used for Data Processing - pandas_dataframe_agent:**
+ This agent manages the underlying data using the pandas library, handling tasks like data cleaning, transformation, and organization. It ensures that the data is in a format the language model can effectively utilize.
 
-3. Agent Used for Data Processing - pandas_dataframe_agent:
- The pandas_dataframe_agent plays a vital role in handling and processing the underlying data. Built on the popular pandas library, this agent is likely designed to manage datasets efficiently. It handles tasks such as data cleaning, transformation, and organization, ensuring that the data fed into the chatbot is in a format that the language model can understand and utilize effectively.
+**4. LLM Model Used - GPT4:**
+The Generative Pre-trained Transformer model, GPT-4, serves as the core engine for language understanding and generation. It excels in comprehending context and generating human-like text, forming the backbone of the chatbot's ability to understand user intent and respond appropriately.
 
-4. LLM Model Used - GPT4:
-GPT4, or the fourth iteration of the Generative Pre-trained Transformer model, serves as the core language understanding and generation engine. Trained on diverse and extensive datasets, GPT4 excels in comprehending context, generating human-like text, and providing relevant responses. It forms the backbone of the chatbot's ability to understand user intent, answer queries, and engage in dynamic conversations.
+In summary, the Langchain framework integrates the components, with ChatOpenAI managing interactions, pandas_dataframe_agent handling data, and GPT-4 providing language capabilities. Together, these elements create an advanced and efficient chatbot capable of processing and responding to user inputs naturally and contextually.
 
-In summary, the Langchain framework orchestrates the integration of components, ChatOpenAI handles user interactions, the pandas_dataframe_agent manages data processing, and GPT4 serves as the powerful language model. Together, these elements create a sophisticated and efficient chatbot capable of understanding, processing, and responding to user inputs in a natural and context-aware manner.
+## Streamlit Instructions:
 
-Streamlit Instructions:
-
-1. Select for the catebory of apps from the three drop downs (Fitness, Health and Productivity)
-2. 2.Enter your query
+1. Select the category of apps from the three drop-down menus (Fitness, Health, and Productivity).
+2. Enter your query
 3. Enter if any app summarizations needed
 4. Look for the visualizations
 
